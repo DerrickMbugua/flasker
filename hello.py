@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from markupsafe import escape
 
 #create an instance
@@ -14,3 +14,7 @@ def index():
 
 def user(name):
   return f"<p>Hello, {escape(name)}!</p>"
+
+@app.get('/home')
+def home():
+  return render_template('index.html')
