@@ -13,7 +13,7 @@ def index():
 @app.route('/<name>')
 
 def user(name):
-  return f"<p>Hello, {escape(name)}!</p>"
+  return render_template('user.html', name=name)
 
 @app.get('/home')
 def home():
